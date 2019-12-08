@@ -1,4 +1,4 @@
-#include "Game.h"
+#include "headers/Game.h"
 
 const sf::Color white(255,255,255);
 const sf::Color black(0, 0, 0);
