@@ -1,4 +1,4 @@
-#include "Bot.h"
+#include "headers/Bot.h"
 
 char winner(char matrix[3][3]);
 
@@ -26,11 +26,9 @@ int Bot::play(Player* **matrix)
             if (matrix[i][j] == NULL)
             {
                 frees.push_back(i * 3 + j);
-                cout << i * 3 + j;
             }
         }
     }
-    cout << endl;
     return frees[rand() % frees.size()];
 }
 
