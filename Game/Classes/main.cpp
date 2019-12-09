@@ -1,5 +1,5 @@
 #include <SFML/Graphics.hpp>
-#include "Game.h"
+#include "headers/Game.h"
 
 const int HEIGHT = 600;
 const int WIDTH = 800;
