@@ -7,12 +7,20 @@ Game::Game(Player *p1, Player *p2)
 {
     this->p1 = p1;
     this->p2 = p2;
-    this->active = p1;
+    
+    this->matrix = new Player**[3];
+
+    if(p1->getSymbol() == 'X')
+        this->active = p1;
+    else
+        this->active = p2;
+
     for(int i = 0; i < 3; i++)
     {
+        matrix[i] = new Player*[3];
         for(int j = 0; j < 3; j++)
         {
-            matrix[i][j] = 0;
+            matrix[i][j] = NULL;
         }
     }
 }
@@ -137,8 +145,11 @@ Player* Game::winner()
     return NULL;
 } 
         
-bool Game::play(int lin, int col)
+bool Game::play(int position)
 {
+    int lin = position / 3;
+    int col = position % 3;
+
     if(lin >= 3 || lin < 0) 
         return false;
     else if (col >= 3 || col < 0) 

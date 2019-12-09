@@ -13,6 +13,8 @@ class Player
         string getName();
         char getSymbol();
         void rename(string newName);
+        virtual int play(Player*** matrix) {};
+        virtual bool isBot() {return false;};
     private:
         string name;
         char symbol;

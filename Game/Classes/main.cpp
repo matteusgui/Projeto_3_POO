@@ -22,7 +22,7 @@ int main()
     }
     
     Player *a = new Player("vitor", 'X');
-    Player *b = new Player("outro", 'O');
+    Bot *b = new Bot('O');
 
     Game game(a, b);
     sf::Vector2f gamePosition(200,100);
@@ -50,7 +50,11 @@ int main()
                         int lin = (event.mouseButton.y - game.getPosition().y) / (game.getSize() / 3);
                         
                         //Executa a Jogada
-                        game.play(lin, col);
+                        if(game.play(lin*3 + col))
+                        {
+                            if(game.getActive()->isBot())
+                                cout << game.play(game.getActive()->play(game.getMatrix()));
+                        }
                     }
             }
             if (event.type == sf::Event::Closed)
