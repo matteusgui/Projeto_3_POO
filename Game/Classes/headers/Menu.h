@@ -17,5 +17,6 @@ public:
     Menu( sf::RenderWindow &window, sf::Image background, sf::Font fonte);
     ~Menu();
     void drawMenu();
-
+    bool cliqueIniciar();
+    bool cliqueComoJogar();
 };
