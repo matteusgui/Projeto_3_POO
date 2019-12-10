@@ -23,6 +23,9 @@ Game::Game(Player *p1, Player *p2)
             matrix[i][j] = NULL;
         }
     }
+
+    if(active->isBot() && !this->isFull() && !this->winner())
+        this->play(active->play(this->matrix));    
 }
 
 void Game::drawGrade()
@@ -156,6 +159,8 @@ bool Game::play(int position)
         return false;
     else if (matrix[lin][col]) 
         return false;
+    else if(this->winner())
+        return false;
     else
     {
         matrix[lin][col] = active;
@@ -163,6 +168,9 @@ bool Game::play(int position)
             active = p2;
         else
             active = p1;
+
+        if(active->isBot() && !this->isFull() && !this->winner())
+            return this->play(active->play(this->matrix));
         return true;   
     }        
 }
