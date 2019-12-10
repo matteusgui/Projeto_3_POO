@@ -10,7 +10,6 @@ class Menu
 private:
     sf::Sprite background;
     sf::Font fonte;
-    sf::Text ComoJogar;
     sf::Text Selecionar;
     sf::RenderWindow &window;
 public:

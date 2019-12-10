@@ -10,41 +10,32 @@ Menu::Menu(sf::RenderWindow &window,sf::Image background_Recieved, sf::Font font
     this->window = window;
 
     Selecionar.setFont(this->fonte);
-    ComoJogar.setFont(this->fonte);
 
-    Selecionar.setString("Selecionar modo de Jogo");
-    ComoJogar.setString("Como Jogar");
+    Selecionar.setString("Modo de Jogo");
 
-    Selecionar.setCharacterSize(10);
-    ComoJogar.setCharacterSize(10);
+    Selecionar.setCharacterSize(15);
 
     Selecionar.setFillColor(Color::Black);
-    ComoJogar.setFillColor(Color::Black);
 }
 
 void Menu::drawMenu()
 {
+    sf::Vector2f meio(window.getSize().x,window.getSize().y);
     //Coloca o background na posição correta na tela
     background.setPosition(0,0);
     window.draw(background);
 
     //Cria o retangulo
-    sf:: rectangle(100,30);
-    rectangle.setFillColor(Color::Blue);
-    rectangle.setPosition(30, 80);
-    //Desenha o retângulo na parte superior esquerda
+    sf::RectangleShape rectangle(190, 35);
+    rectangle.setColor(Color::Black);
+    rectangle.setPosition((meio.x / 2) - 85, meio.y - 45);
     window.draw(rectangle);
-    sf::Vector2f size = window.getSize();
-    int width = size.x;
-    int heigh = size.y;
-    rectangle.setPosition(widht - 130, 80);
-    //Desenha o retangulo na parte superior direita
-    window.draw(rectangle);
-    ComoJogar.setPosition(35,85);
-    Selecionar.setPosition(widht - 135, 85);
+    //Desenha o texto dentro do retangulo desenhado
+    Selecionar.setPosition((meio.x/2)-80, meio.y - 40);
+    window.draw(Selecionar);
 }
 
 bool Menu::cliqueIniciar()
 {
-    return (mouseButton.position.x > window.getSize().x - 130) && (mouseButton.position.x < window.getSize().x - 30) && (mouseButton.position.y > 80) && (mouseButton.position.y < 110)
+    return (mouseButton.position.x > window.getSize().x - 130) && (mouseButton.position.x < window.getSize().x - 30) && (mouseButton.position.y > 80) && (mouseButton.position.y < 110);
 }
