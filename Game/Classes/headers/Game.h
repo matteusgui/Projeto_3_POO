@@ -2,6 +2,7 @@
 #define JOGO_H
 
 #include "Player.h"
+#include "Bot.h"
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 
@@ -13,7 +14,7 @@ class Game
 
         bool isFull();
         Player* winner();
-        bool play(int lin, int col);
+        bool play(int position);
         void print();
         void drawGrade();
         void drawPlays();
@@ -29,6 +30,7 @@ class Game
         float getSize() {return this->size;};
         sf::Vector2f getPosition() {return this->position;};
         Player* getActive() {return this->active;};
+        Player*** getMatrix() {return this->matrix;};
 
     private:
         sf::Image oImage;
@@ -39,7 +41,7 @@ class Game
         Player* p1;
         Player* p2;
         Player* active;
-        Player* matrix[3][3];
+        Player*** matrix;
 };
 
 #endif
