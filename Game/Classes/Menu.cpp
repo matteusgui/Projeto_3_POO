@@ -37,5 +37,5 @@ void Menu::drawMenu()
 
 bool Menu::cliqueIniciar()
 {
-    return (mouseButton.position.x > window.getSize().x - 130) && (mouseButton.position.x < window.getSize().x - 30) && (mouseButton.position.y > 80) && (mouseButton.position.y < 110);
+    return (mouseButton.position.x > window.getSize().x - 85) && (mouseButton.position.x < window.getSize().x + 85) && (mouseButton.position.y > window.getSize().y/2 - 45) && (mouseButton.position.y < window.getSize().y/2 - 10);
 }

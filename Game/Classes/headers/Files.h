@@ -4,24 +4,24 @@
 #include <fstream>
 #include <iostream>
 #include <string>
+#include <vector>
 
 #include "Player.h"
+#include
+
+template <class T>
+template<class S>
 
 using namespace std;
 
-class Files: public Player
+class Files
 {
 private:
     const string path = "ranking.dat";
 public:
-    Files(/* args */);
+    Files();
     ~Files();
+    void GravaJogo(T& a, S& b);
+    void Stats();
 };
-
-Files::Files(/* args */)
-{
-}
-
-Files::~Files()
-{
-}
+#endif
