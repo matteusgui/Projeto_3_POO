@@ -2,9 +2,18 @@
 
 using namespace std;
 
-void Files::GravaJogo(T& a, S& B)
+void Files::GravaJogo(Player *a, Player* b)
 {
-    ofstream arqOut;
-    arqOut.fopen(path, ios::binary);
+    if (a->isBot() || b->isBot())
+    {
+        this->Contra_Bot = true;
+    }
+    
+}
 
+void Files::Stats()
+{
+    ifstream arqIn;
+    arqIn.fopen(path, ios::binary);
+    
 }
