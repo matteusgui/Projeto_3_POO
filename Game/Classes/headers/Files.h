@@ -5,12 +5,13 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <fstream>
 
 #include "Player.h"
 #include
 
 template <class T>
-template<class S>
+template <class S>
 
 using namespace std;
 
