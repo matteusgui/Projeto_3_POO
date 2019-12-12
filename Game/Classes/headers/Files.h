@@ -7,6 +7,7 @@
 #include <vector>
 
 #include "Player.h"
+#include "GameStats.h"
 
 using namespace std;
 
@@ -14,8 +15,7 @@ class Files
 {
 private:
     const string path = "ranking.dat";
-    bool Contra_Bot;
-    Player winner;
+    GameStats dados_do_ultimo_jogo;
 public:
     Files();
     ~Files();
