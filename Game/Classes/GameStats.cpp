@@ -1,17 +1,11 @@
 #include "headers/GameStats.h"
 
-GameStats::GameStats(Player winner, bool Bot)
-{
-    this->winner = winner;
-    this->Contra_Bot = Bot;
-}
-
-void GameStats::setWinner(Player winner)
+void GameStats::setWinner(Player* winner)
 {
     this->winner = winner;
 }
 
-Player GameStats::getWinner()
+Player* GameStats::getWinner()
 {
     return winner;
 }

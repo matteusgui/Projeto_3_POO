@@ -7,6 +7,7 @@
 #include <vector>
 
 #include "Player.h"
+#include "Game.h"
 #include "GameStats.h"
 
 using namespace std;
@@ -15,11 +16,12 @@ class Files
 {
 private:
     const string path = "ranking.dat";
-    GameStats dados_do_ultimo_jogo;
+    GameStats* Last_Game;
 public:
-    Files();
+    Files(GameStats* Last_Game);
     ~Files();
     void GravaJogo(Player *a, Player *b);
-    void Stats();
+    void Carrega_Jogos();
+    void drawStats();
 };
 #endif

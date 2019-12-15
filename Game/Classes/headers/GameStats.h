@@ -8,21 +8,13 @@ class GameStats
 {
 private:
     bool Contra_Bot;
-    Player winner;
+    Player* winner;
     
     public:
-    GameStats(Player winner, bool Bot);
+    GameStats();
     ~GameStats();
-    void setWinner(Player winner);
-    Player getWinner();
+    void setWinner(Player* winner);
+    Player* getWinner();
     void setContra_Bot(bool Contra_Bot);
     bool getContra_Bot();
 };
-
-GameStats::GameStats(/* args */)
-{
-}
-
-GameStats::~GameStats()
-{
-}
