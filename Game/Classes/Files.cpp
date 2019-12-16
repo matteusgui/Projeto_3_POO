@@ -2,8 +2,9 @@
 
 using namespace std;
 
-Files::Files(GameStats* Last_Game): Last_Game(Last_Game)
+Files::Files(GameStats* Last_Game, RenderWindow* window): Last_Game(Last_Game), window(window)
 {
+
 }
 
 void Files::GravaJogo(Player *a, Player* b, Game* game)
@@ -45,5 +46,47 @@ void Files::Carrega_Jogos()
 
 void Files::drawStats()
 {
+    bool contra = Last_Game->getContra_Bot;
+    switch (contra)
+    {
+    case true:
+        int vitoria = 0;
+        for (int i = 0; i < Jogos.size(); i++)
+        {
+            if (Jogos[i].getContra_Bot())
+            {
+                vitoria++;
+            }
+            sf::Text Titulo;
+            Titulo.setString(L"Jogos contra o Computador");
+            Titulo.setCharacterSize(14);
+            Titulo.setposition(window->getSize().x / 2 - 175, 10);
+            window->draw(Titulo);
+            string victory = to_string(vitoria);
+            stringstream texto;
+            sf::Text Texto;
+            texto = "O seu número de vitórias é de:";
+            Texto.setString(texto);
+            Texto.setCharacterSize(10);
+            Texto.setPosition(window->getSize().x, 50);
+            window->draw(Texto);
+            texto = victory;
+            Texto.setString(texto);
+            Texto.setCharacterSize(40);
+            
+        }
+        
+        break;
     
+    default:
+        break;
+    }
+}
+
+void FIle::setFonte(Font fonte) {
+        this->fonte = fonte;
+}
+    
+Font File::getFonte() {
+    return fonte;
 }
